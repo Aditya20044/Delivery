@@ -3,8 +3,8 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
-const logoUrl = 'http://localhost:4000/images/Deliver_Deli.jpeg';
-const bgUrl = 'http://localhost:4000/images/Background.jpeg';
+const logoUrl = 'https://delivery-l4p6.onrender.com/images/Deliver_Deli.jpeg';
+const bgUrl = 'https://delivery-l4p6.onrender.com/images/Background.jpeg';
 
 const slogans = [
   'Craving? We Deliver Happiness!',
