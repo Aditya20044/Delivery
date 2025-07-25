@@ -24,11 +24,11 @@ const FoodMenu = ({ foods }) => {
 
   // Keep snackbar visible as long as the item is in the cart
   useEffect(() => {
-    if (snackbar && snackFood) {
-      const inCart = cart.some(item => item.food._id === snackFood._id);
-      if (!inCart || cart.length === 0) setSnackbar(false);
+    if (snackbar) {
+      const timer = setTimeout(() => setSnackbar(false), 2000);
+      return () => clearTimeout(timer);
     }
-  }, [cart, snackbar, snackFood]);
+  }, [snackbar]);
 
   return (
     <>
