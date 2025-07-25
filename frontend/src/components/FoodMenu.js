@@ -4,6 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 const fallbackImg = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80';
 
+const getImagePath = (image) => {
+  if (!image) return fallbackImg;
+  const filename = image.split('/').pop();
+  return `/images/${filename}`;
+};
+
 const FoodMenu = ({ foods }) => {
   const { cart, addToCart } = useContext(CartContext);
   const [snackbar, setSnackbar] = useState(false);
@@ -29,7 +35,7 @@ const FoodMenu = ({ foods }) => {
       <div className="food-menu">
         {foods.map(food => (
           <div key={food._id} className="food-item fade-in">
-            <img src={food.image || fallbackImg} alt={food.name} style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 6, marginBottom: 8 }} loading="lazy" onError={e => { e.target.onerror = null; e.target.src = fallbackImg; }} />
+            <img src={getImagePath(food.image)} alt={food.name} style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 6, marginBottom: 8 }} loading="lazy" onError={e => { e.target.onerror = null; e.target.src = fallbackImg; }} />
             <h4>{food.name}</h4>
             <p>{food.description}</p>
             <p>₹{food.price}</p>
