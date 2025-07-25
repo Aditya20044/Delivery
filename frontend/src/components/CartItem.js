@@ -5,8 +5,8 @@ const fallbackImg = '/fallback_food.jpg';
 // Dynamically builds the image URL from the backend
 const getImagePath = (image) => {
   if (!image) return fallbackImg;
-  if (image.startsWith('http')) return image;
-  return `${process.env.REACT_APP_API_URL}/food_images/${image}`;
+  const filename = image.split('/').pop();
+  return `/images/${filename}`;
 };
 
 const CartItem = ({ item, onRemove }) => {
