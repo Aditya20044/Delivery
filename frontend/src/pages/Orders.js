@@ -24,7 +24,7 @@ const Orders = () => {
           <div className="page-title-box">
             <h2 className="page-title">Order History</h2>
           </div>
-          <OrderHistory orders={orders} />
+          <OrderHistory orders={[...orders].reverse()} />
         </div>
       </div>
     </>
