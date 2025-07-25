@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-const logoUrl = 'http://localhost:4000/images/Deliver_Deli.jpeg';
+// ✅ Fixed logo path — since it's in public/images/
+const logoUrl = '/images/Deliver_Deli.jpeg';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -16,8 +17,22 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <img src={logoUrl} alt="logo" style={{ width: 36, height: 36, borderRadius: 8 }} />
-        <Link to="/" style={{ fontWeight: 700, fontSize: 22, color: '#fca311', textShadow: '0 1px 4px #2223' }}>DeliverDeli</Link>
+        <img
+          src={logoUrl}
+          alt="logo"
+          style={{ width: 36, height: 36, borderRadius: 8 }}
+        />
+        <Link
+          to="/"
+          style={{
+            fontWeight: 700,
+            fontSize: 22,
+            color: '#fca311',
+            textShadow: '0 1px 4px #2223',
+          }}
+        >
+          DeliverDeli
+        </Link>
       </div>
       <div>
         <Link to="/">Home</Link>
@@ -41,4 +56,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
