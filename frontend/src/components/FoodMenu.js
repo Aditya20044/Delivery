@@ -29,7 +29,7 @@ const FoodMenu = ({ foods }) => {
       <div className="food-menu">
         {foods.map(food => (
           <div key={food._id} className="food-item fade-in">
-            <img src={food.image || fallbackImg} alt={food.name} style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 6, marginBottom: 8 }} onError={e => { e.target.onerror = null; e.target.src = fallbackImg; }} />
+            <img src={food.image || fallbackImg} alt={food.name} style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 6, marginBottom: 8 }} loading="lazy" onError={e => { e.target.onerror = null; e.target.src = fallbackImg; }} />
             <h4>{food.name}</h4>
             <p>{food.description}</p>
             <p>₹{food.price}</p>

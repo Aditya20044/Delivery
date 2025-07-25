@@ -19,6 +19,7 @@ const CartItem = ({ item, onRemove }) => {
         src={imageUrl}
         alt={item.food.name}
         className="cart-food-img"
+        loading="lazy"
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = fallbackImg;
