@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000/api';
+const API_URL = 'https://delivery-l4p6.onrender.com/api';
 
 const api = {
   get: async (path, token) => {
